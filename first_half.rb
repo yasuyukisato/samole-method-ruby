@@ -1,7 +1,8 @@
 # 問題：文字列no pain no gainからnだけをカウントする
 count = 0
-text = 'no pain no gain'
-text.chars do |m|
+texts = 'no pain no gain'
+arr = texts.chars.reject{ |i| i == ' ' }
+arr.each do |m|
     if m == 'n'
       count += 1
     end
