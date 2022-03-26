@@ -29,3 +29,12 @@ def count_string(texts)
   puts hash
 end
 count_string(texts)
+
+
+# 摂氏温度を華氏温度に変換するcels_to_fahrメソッドを定義せよ
+  # 摂氏１度上昇 = 華氏1.8℉上昇
+  # 摂氏（℃）=｛華氏（℉）－32｝/ 1.8
+  # 華氏（℉）＝ 摂氏（℃）×1.8 + 32
+def cels_to_fahr(celsius)
+  celsius * 1.8 + 32
+end
