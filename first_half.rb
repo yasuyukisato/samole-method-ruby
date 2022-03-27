@@ -38,3 +38,22 @@ count_string(texts)
 def cels_to_fahr(celsius)
   celsius * 1.8 + 32
 end
+
+# 配列arrayの、後ろから1〜3番目の数字それぞれに対応する文字列を、用意されたハッシュから取り出して連結で表示せよ
+def fetch_string(array)
+  hash = {
+    "0" => "---",
+    "1" => "--x",
+    "2" => "-w-",
+    "3" =>  "-wx",
+    "4" => "r--",
+    "5" => "r-x",
+    "6" => "rw-",
+    "7" => "rwx"
+  }
+  strings = ""
+  array[-3..-1].each { |m| strings += hash[m] }
+  puts strigns
+end
+  array = ["1", "2", "3", "4", "5", "6"]
+  fetch_string(array)
