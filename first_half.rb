@@ -53,7 +53,15 @@ def fetch_string(array)
   }
   strings = ""
   array[-3..-1].each { |m| strings += hash[m] }
-  puts strigns
+  puts strings
 end
   array = ["1", "2", "3", "4", "5", "6"]
   fetch_string(array)
+
+
+# test_file.rbの行数を取得せよ
+file = File.open('./test_file.rb', 'r')
+if File.exists?(file)
+  puts file.read.lines.count
+  file.close
+end
