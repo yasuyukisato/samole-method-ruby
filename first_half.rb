@@ -65,3 +65,14 @@ if File.exists?(file)
   puts file.read.lines.count
   file.close
 end
+
+
+# 華氏を摂氏に変換するメソッドfahr_to_celsを定義せよ
+  # 摂氏1度から摂氏100度まで1度きざみに華氏温度との対応を出力すること
+  # 華氏（℉）＝ 摂氏（℃）×1.8 + 32
+  # 摂氏（℃）=｛華氏（℉）－32｝/ 1.8
+  def fahr_to_cels(fahrenheit)
+    (fahrenheit - 32) / 1.8
+  end
+  1.upto(100){ |i| puts "華氏#{i}度に対応する摂氏は#{fahr_to_cels(i)floor(1).to_f}度" } # 24の場合24.0と表示させたいためto_fメソッドを使用
+
