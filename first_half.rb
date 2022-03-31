@@ -74,5 +74,13 @@ end
   def fahr_to_cels(fahrenheit)
     (fahrenheit - 32) / 1.8
   end
-  1.upto(100){ |i| puts "華氏#{i}度に対応する摂氏は#{fahr_to_cels(i)floor(1).to_f}度" } # 24の場合24.0と表示させたいためto_fメソッドを使用
+  1.upto(100){ |i| puts "華氏#{i}度に対応する摂氏は#{fahr_to_cels(i).floor(1).to_f}度" } # 24の場合24.0と表示させたいためto_fメソッドを使用
+
+
+# sample.rbの容量（バイト数）を求めよ
+  # できたらwcコマンドを使い容量が合っているかチェックすること
+  # ターミナル → wc ファイル名でファイルサイズ表示
+p file_size = File::Stat.new('./sample.rb').size
+
+
 
