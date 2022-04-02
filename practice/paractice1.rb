@@ -128,3 +128,17 @@ end
 
 array = Array.new()
 create_array(array) # (1..100).to_aでもok
+
+
+# 1〜100までの整数が昇順に並ぶ配列aryを作れ
+# 配列aryの各要素を100倍した配列ary2を作れ
+
+def ary 
+  (1..100).to_a
+end
+
+def ary2(ary) 
+  ary.map{ |i| i * 100 }
+end
+
+p ary2(ary)
