@@ -116,3 +116,15 @@ def total_dice
 end
 
 
+# 1~100までの整数が昇順に並ぶ配列aを作れ
+  # a[0]は1、a[99]は100とする
+
+def create_array(arr)
+  1.upto(100).each do |n|
+    arr.push(n)
+  end
+  return arr
+end
+
+array = Array.new()
+create_array(array) # (1..100).to_aでもok
