@@ -83,4 +83,36 @@ end
 p file_size = File::Stat.new('./sample.rb').size
 
 
+# sample.rbファイルの単語数を取得せよ
+  # wcコマンドを使い単語数が合っているかチェックすること
+  # wcコマンドのカウント方法に合わせる
+  # wc -w sample.rbで単語数のみを確認できる
+
+count = 0
+hash = Hash.new
+file = File.open('./sample.rb')
+file.read.split(' ').each do |word|
+  count += 1
+end
+p count
+
+
+# (1)サイコロを降って出た目を返すメソッドdiceを定義せよ
+  # サイコロには1〜6の数字がある
+  # （もちろん）サイコロなのでランダムに値が返る
+# (2)10個のサイコロを振って出た目の合計を返すメソッドdice10も定義せよ
+
+def dice 
+  rand(1..6) 
+end
+
+def total_dice 
+  total = 0
+  10.times do
+      dice_num = rand(1..6)
+      total += dice_num
+  end
+  return total
+end
+
 
