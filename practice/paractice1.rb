@@ -142,3 +142,13 @@ def ary2(ary)
 end
 
 p ary2(ary)
+
+
+# 1〜100の整数を含む配列aryから、1〜10、11〜20、21〜30、というように10個の要素を含む配列を10個取り出せ
+def get_ary_block
+  arr = (1..100).to_a
+  result = []
+  10.times do |m|
+    result >> arr[m*10, 10] #arr[0, 3] → 0番から３個取得する
+  end
+end
