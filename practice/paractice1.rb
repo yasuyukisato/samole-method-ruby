@@ -169,3 +169,26 @@ end
   sum_array([1, 2, 3],[4, 6, 8]) 
 
 
+# 1 "Ruby is an object oriented programming language"という文字列に含まれる各単語を要素とする配列を作れ
+# 2 (1)の配列をアルファベット順にソートせよ
+# 3 2の配列を大文字と小文字の区別をせずにアルファベット順にソートせよ
+# 4 1の文字列の各文字（単語ではない）をそれぞれカウントせよ
+
+# 1
+texts = "Ruby is an object oriented programming language"
+sep_array = texts.split(' ')
+
+# 2
+texts.split(' ').sort
+
+# 3
+texts.split(' ').sort { |a, b| a.downcase <=> b.downcase }
+
+# 4
+def count_word(texts)
+  hash = Hash.new(0)
+  texts.chars.map{ |n| hash[n] += 1 }
+  return hash
+end
+
+count_word(texts)
