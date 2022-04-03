@@ -152,3 +152,20 @@ def get_ary_block
     result >> arr[m*10, 10] #arr[0, 3] → 0番から３個取得する
   end
 end
+
+
+# 数値からなる配列num1とnum2にたいして、それらの個々の要素を足し合わせた要素からなる配列を返すメソッドsum_arrayを定義せよ
+  # 例
+  # p sum_array([1, 2, 3],[4, 6, 8]) 
+  # => [5, 8, 11]
+
+  def sum_array(arr1, arr2)
+    result = []
+    arr1.zip(arr2) do |a, b|
+        result << a + b
+    end
+    return result
+  end
+  sum_array([1, 2, 3],[4, 6, 8]) 
+
+
