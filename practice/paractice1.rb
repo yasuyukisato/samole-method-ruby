@@ -190,5 +190,29 @@ def count_word(texts)
   texts.chars.map{ |n| hash[n] += 1 }
   return hash
 end
-
 count_word(texts)
+
+
+# 1 曜日を表す英語と、日本語との対応を表すハッシュwdayを定義せよ
+# 2 ハッシュのメソッドを使い、ハッシュwdayのペアの数を数えよ
+# 3 eachメソッドと(1)のハッシュwdayを使って、以下のような文字列を出力せよ
+  # 「sunday」は日曜日のことです
+
+# 1
+week_day = {
+  sunday: "日曜",
+  monday: "月曜",
+  tuesday: "火曜",
+  wednesday: "水曜",
+  thursday: "木曜",
+  flyday: "金曜",
+  saturday: "土曜",
+}
+
+# 2
+week_day.length
+
+# 3
+week_day.each do |key, val|
+  puts "#{key}は#{val}のことです"
+end
