@@ -216,3 +216,23 @@ week_day.length
 week_day.each do |key, val|
   puts "#{key}は#{val}のことです"
 end
+
+
+# 空白、タブ、改行で区切られた以下の文字列を、ハッシュに変換するメソッドstr_to_hashを定義せよ
+  # 例
+  # ”blue 青 white 白\nred 赤”
+  # => {"blue"=>"青", "white"=>"白", "red"=>"赤"}
+
+texts = "blue 青 white 白\nred 赤"
+
+def str_to_hash(str)
+  hash = Hash.new(0)  # Hash.new(0)で値に0を入れて初期化しないと、nilが返ってエラーが出る。
+  ary = str.split(/\s+/)
+  while key = ary.shift
+      value = ary.shift
+      hash[key] = value
+  end
+  return hash
+end
+
+p str_to_hash(texts)
