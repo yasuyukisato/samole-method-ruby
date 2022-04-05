@@ -293,4 +293,39 @@
   file_str_count(file)
 
 
-  
+# テキストファイルからデータを読み込み、次の条件に従って上書きをするスクリプトを作成せよ。
+
+  # ファイル中の行を逆順に並べ替える
+  file = 'foo.txt'
+  def reverse(file)
+    File.open(file, "r+") do |f|
+      lines = f.readlines
+      lines.reverse.join
+      f.rewind #ポインタを先頭に移動
+      f.truncate(0) # 空にする
+      f.write(lines.reverse.join) #joinで配列を文字列に変換
+    end
+  end  
+  reverse(file)
+
+  # ファイル中の最初の1行だけ残して他は削除
+  def first_one(file)
+    File.open(file, 'r+') do |f|
+      lines = f.readlines
+      f.rewind
+      f.truncate(0)
+      f.write lines[0]
+    end
+  end
+  first_one(file)
+
+  # ファイル中の最後の1行だけ残して他は削除
+  def last_one(file)
+    File.open(file, 'r+') do |f|
+     p lines = f.readlines
+      f.rewind
+      f.truncate(0)
+      f.write lines[-1]
+    end
+  end
+  last_one(file)
