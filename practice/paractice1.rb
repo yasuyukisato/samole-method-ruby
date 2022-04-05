@@ -234,5 +234,20 @@ def str_to_hash(str)
   end
   return hash
 end
-
 p str_to_hash(texts)
+
+
+# 電子メールアドレス「ローカルパート@ドメイン名」の文字列から、ローカルパートを$1、ドメイン名を$2として取得する正規表現を作れ。
+email = "test@domain.com"
+email.scan(/(\w+)@(\w+\.\w+)/).each do |n|
+  "$1: #{$1}"
+  "$2: #{$2}"
+end
+
+# 正規表現を()で囲むとキャプチャ機能($1, $2など)が使える
+email = "test@hoge@domain.com"
+email.scan(/(\w+)@(\w+)@(\w+\.\w+)/).each do |n|
+  p "$1: #{$1}"
+  p "$2: #{$2}"
+  p "$3: #{$3}"
+end
