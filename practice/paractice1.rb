@@ -268,3 +268,27 @@ end
 
 strings = "in-reply-to"
 word_capitalize(strings)
+
+
+# foo.txtからデータを読み込んで、次の数を数える処理を行うスクリプトを作成せよ。
+  file = File.read('foo.txt')
+
+  # - 行数
+  def file_row_count(file)
+    file.lines.count
+  end
+
+  # - 単語数
+  def file_word_count(file)
+    ary = file.split(/\s+/)
+    ary.size
+  end
+
+  # - 文字数
+  def file_str_count(file)
+    ary = file.split(/\s+/)
+    ary.join.chars.size
+  end
+
+  file_str_count(file)
+
