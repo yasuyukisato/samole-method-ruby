@@ -345,3 +345,13 @@
     end
     # FileTestモジュール　→ ファイルの属性を事前に検査するためのメソッド
   end
+
+
+  # EUC-JPの文字列と、Shift-JISの文字列を連結してUTF-8の文字列を返すメソッドを定義せよ。
+    str_ecu = "ほげほげ".encode("EUC-JP")
+    str_sjis = "ふーばー".encode("Shift_JIS")
+
+    def convert_utf_8(str_ecu, str_sjis)
+      str_ecu.encode("UTF-8") + str_sjis.encode("UTF-8")
+    end
+    convert_utf_8(str_ecu, str_sjis)
