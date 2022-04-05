@@ -355,3 +355,13 @@
       str_ecu.encode("UTF-8") + str_sjis.encode("UTF-8")
     end
     convert_utf_8(str_ecu, str_sjis)
+
+
+    # Shift_JISで「こんにちは」と書かれたテキストファイルを作り、そのテキストファイルを読み込んでUTF-8で出力するスクリプトを作れ。
+
+    File.write('bar.txt', 'こんにちは', encodeing: 'Shift_JIS')
+    def to_utf_8
+      text = File.read('bar.txt', encodeing: 'Shift_JIS:UTF-8')
+      p text
+    end
+    to_utf_8
