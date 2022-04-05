@@ -258,3 +258,13 @@ str = "正規表現は難しい！なんて難しいんだ！"
 str.gsub(/正規表現/) do |m|
   p  "#{m}は簡単だ！なんて簡単なんだ"
 end
+
+
+# アルファベットとハイフンからなる文字列を与えられると、ハイフンで区切られた部分の先頭が大文字になるようなメソッドword_capitalizeを定義せよ。
+def word_capitalize(strings)
+  ary = strings.split(/\-/)
+  p ary.map(&:capitalize).join("-")
+end
+
+strings = "in-reply-to"
+word_capitalize(strings)
