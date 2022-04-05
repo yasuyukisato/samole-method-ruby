@@ -322,10 +322,26 @@
   # ファイル中の最後の1行だけ残して他は削除
   def last_one(file)
     File.open(file, 'r+') do |f|
-     p lines = f.readlines
+      lines = f.readlines
       f.rewind
       f.truncate(0)
       f.write lines[-1]
     end
   end
   last_one(file)
+
+
+  # 変数$:にはRubyが利用するライブラリが置かれているディレクトリの名前が配列の形で格納されている
+  # この変数を使い、RUbyが利用できるライブラリのファイル名を順に出力せよ
+
+  $:.each do |path|
+    next unless FileTest.directory?(path) # ディレクトリ以外を排除
+    Dir.open(path) do |dir|
+      dir.each do |name|
+        if name == /\.rb$/i # iはアルファベットの大文字と小文字の違いを無視
+          puts name
+        end
+      end
+    end
+    # FileTestモジュール　→ ファイルの属性を事前に検査するためのメソッド
+  end
